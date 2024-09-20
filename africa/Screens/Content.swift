@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct ContentScreen: View {
+struct Content: View {
+    
     var body: some View {
-        Text("Content")
+        NavigationStack{
+            ScrollView(){
+                VStack{
+                    ContentSliderView()
+                        .frame(height: 300)
+                    
+                    AnimalListView()
+                }
+                .navigationTitle("Africa")
+            }
+        }
+        .navigationViewStyle(.stack)
     }
 }
 
 #Preview {
-    ContentScreen()
+    Content()
 }

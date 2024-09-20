@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct AnimalView: View {
-    
-    let animals: [Animal] = Bundle.main.decodeJson("animals")
+struct AnimalListView: View {
+        
+    private let animals: [Animal] = Bundle.main.decodeJson("animals")
     
     var body: some View {
         ForEach(animals) { animal in
-            NavigationLink(destination: Videos()){
+            NavigationLink(destination: AnimalDetailView(animal: animal)){
                 HStack(spacing: 12){
                     Image(animal.image)
                         .resizable()
@@ -41,16 +41,6 @@ struct AnimalView: View {
                 }
                 .padding()
             }
-            .contextMenu{
-                Button(action: {}) {
-                    Text("Go")
-                }
-            } preview: {
-                VStack{
-                    Text("HIIII")
-                }
-                .frame(width: 300, height: 450)
-            }
             Divider()
         }
         
@@ -58,5 +48,5 @@ struct AnimalView: View {
 }
 
 #Preview {
-    AnimalView()
+    AnimalListView()
 }

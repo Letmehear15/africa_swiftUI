@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentSliderView: View {
+    let covers: [Cover] = Bundle.main.decodeJson("covers")
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            ForEach(covers) {item in
+                Image(item.name)
+                    .resizable()
+                    .scaledToFill()
+            }
+        }
+        .tabViewStyle(PageTabViewStyle())
     }
 }
 

@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct HeadingView: View {
+    let text: String
+    let image: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: image)
+                .foregroundColor(.accent)
+                .imageScale(.large)
+            
+            Text(text)
+                .font(.title3)
+                .fontWeight(.heavy)
+        }
     }
 }
 
 #Preview {
-    HeadingView()
+    HeadingView(text: "Wilderness in Pictures", image: "photo.on.rectangle.angled")
 }
+
+

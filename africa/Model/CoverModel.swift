@@ -5,4 +5,7 @@
 //  Created by Aleksandr Nesterov on 16.09.2024.
 //
 
-import Foundation
+struct Cover: Identifiable, Codable {
+    let id: Int
+    let name: String
+}

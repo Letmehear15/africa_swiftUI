@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FactTabs: View {
+struct FactTabsView: View {
     let animal: Animal
     
     var body: some View {
@@ -18,11 +18,11 @@ struct FactTabs: View {
                 }
             }
             .tabViewStyle(.page)
-            .frame(height: 150)
+            .frame(height: 200)
         }
     }
 }
 
 #Preview {
-    FactTabs(animal: Bundle.main.decodeJson("animals")[0])
+    FactTabsView(animal: Bundle.main.decodeJson("animals")[0])
 }
